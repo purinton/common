@@ -38,7 +38,7 @@ npm install @purinton/common
 ### ESM Example
 
 ```js
-import { log, path, getCurrentDirname, getCurrentFilename, registerHandlers, registerSignals } from '@purinton/common';
+import { log, path, pathUrl, getCurrentDirname, getCurrentFilename, registerHandlers, registerSignals } from '@purinton/common';
 
 log.info('This is an info log from @purinton/log');
 
@@ -48,6 +48,9 @@ log.info('Registered error handlers.');
 const envFile = path(import.meta, '.env');
 log.info(`path to env file: ${envFile}`);
 
+const envFileUrl = pathUrl(import.meta, '.env');
+log.info(`pathUrl to env file: ${envFileUrl}`);
+
 const { shutdown } = registerSignals();
 log.info('Registered signal handlers.');
 ```
@@ -55,7 +58,7 @@ log.info('Registered signal handlers.');
 ### CommonJS Example
 
 ```js
-const { log, path, getCurrentDirname, getCurrentFilename, registerHandlers, registerSignals } = require('@purinton/common');
+const { log, path, pathUrl, getCurrentDirname, getCurrentFilename, registerHandlers, registerSignals } = require('@purinton/common');
 
 log.info('This is an info log from @purinton/log');
 
@@ -64,6 +67,9 @@ log.info('Registered error handlers.');
 
 const envFile = path(__dirname, '.env');
 log.info(`path to env file: ${envFile}`);
+
+const envFileUrl = pathUrl(__dirname, '.env');
+log.info(`pathUrl to env file: ${envFileUrl}`);
 
 const { shutdown } = registerSignals();
 log.info('Registered signal handlers.');
