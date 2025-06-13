@@ -66,6 +66,7 @@
     "dependencies": {
         "@purinton/errors": "^1.0.5",
         "@purinton/log": "^1.0.5",
+        "@purinton/path": "^1.0.8",
         "@purinton/signals": "^1.0.4"
     }
 }

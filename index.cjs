@@ -1,8 +1,16 @@
-const { join, dirname } = require('path');
+const log = require('@purinton/log').default || require('@purinton/log');
+const pathModule = require('@purinton/path');
+const getCurrentDirname = pathModule.getCurrentDirname;
+const getCurrentFilename = pathModule.getCurrentFilename;
+const path = pathModule.default || pathModule;
+const { registerHandlers } = require('@purinton/errors');
+const { registerSignals } = require('@purinton/signals');
 
-// Basic CommonJS export example
-function myModuleCjs() {
-  return 'Hello from template CJS';
-}
-
-module.exports = myModuleCjs;
+module.exports = {
+  log,
+  getCurrentDirname,
+  getCurrentFilename,
+  path,
+  registerHandlers,
+  registerSignals,
+};
