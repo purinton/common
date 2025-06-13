@@ -1,4 +1,4 @@
-import { log, getCurrentDirname, getCurrentFilename, path, registerHandlers, registerSignals } from './index.mjs';
+import { log, getCurrentDirname, getCurrentFilename, path, pathUrl, registerHandlers, registerSignals } from './index.mjs';
 import { test, expect } from '@jest/globals';
 
 test('log should be defined', () => {
@@ -16,6 +16,10 @@ test('getCurrentFilename should return a string', () => {
 
 test('path should join paths', () => {
   const result = path(import.meta, 'foo');
+  expect(result).toContain('foo');
+});
+test('pathUrl should join paths', () => {
+  const result = pathUrl(import.meta, 'foo');
   expect(result).toContain('foo');
 });
 

@@ -1,5 +1,5 @@
 // Minimal CommonJS test stub
-const { log, getCurrentDirname, getCurrentFilename, path, registerHandlers, registerSignals } = require('./index.cjs');
+const { log, getCurrentDirname, getCurrentFilename, path, pathUrl, registerHandlers, registerSignals } = require('./index.cjs');
 const { test, expect } = require('@jest/globals');
 
 test('log should be defined', () => {
@@ -17,6 +17,10 @@ test('getCurrentFilename should return a string', () => {
 
 test('path should join paths', () => {
   const result = path(__dirname, 'foo');
+  expect(result).toContain('foo');
+});
+test('pathUrl should join paths', () => {
+  const result = pathUrl(__dirname, 'foo');
   expect(result).toContain('foo');
 });
 
