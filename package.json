@@ -45,7 +45,7 @@
     },
     "homepage": "https://github.com/purinton/common#readme",
     "devDependencies": {
-        "jest": "^29.7.0"
+        "jest": "^30.0.0"
     },
     "jest": {
         "testEnvironment": "node",
@@ -56,9 +56,9 @@
         ]
     },
     "dependencies": {
-        "@purinton/errors": "^1.0.5",
-        "@purinton/log": "^1.0.5",
-        "@purinton/path": "^1.0.8",
-        "@purinton/signals": "^1.0.4"
+        "@purinton/errors": "^1.0.8",
+        "@purinton/log": "^1.0.7",
+        "@purinton/path": "^1.0.11",
+        "@purinton/signals": "^1.0.7"
     }
 }
