@@ -24,6 +24,7 @@
 - Path utilities with [@purinton/path]
 - Error handler registration with [@purinton/errors]
 - Signal/shutdown handler registration with [@purinton/signals]
+- **Re-exports Node.js built-in `fs` module**
 - TypeScript type definitions included
 - Fully tested with Jest
 
@@ -38,7 +39,7 @@ npm install @purinton/common
 ### ESM Example
 
 ```js
-import { log, path, pathUrl, getCurrentDirname, getCurrentFilename, registerHandlers, registerSignals } from '@purinton/common';
+import { fs, log, path, pathUrl, getCurrentDirname, getCurrentFilename, registerHandlers, registerSignals } from '@purinton/common';
 
 log.info('This is an info log from @purinton/log');
 
@@ -53,12 +54,16 @@ log.info(`pathUrl to env file: ${envFileUrl}`);
 
 const { shutdown } = registerSignals();
 log.info('Registered signal handlers.');
+
+// Example usage of fs
+const files = fs.readdirSync(getCurrentDirname(import.meta));
+log.info(`Files in current directory: ${files.join(', ')}`);
 ```
 
 ### CommonJS Example
 
 ```js
-const { log, path, pathUrl, getCurrentDirname, getCurrentFilename, registerHandlers, registerSignals } = require('@purinton/common');
+const { fs, log, path, pathUrl, getCurrentDirname, getCurrentFilename, registerHandlers, registerSignals } = require('@purinton/common');
 
 log.info('This is an info log from @purinton/log');
 
@@ -73,9 +78,17 @@ log.info(`pathUrl to env file: ${envFileUrl}`);
 
 const { shutdown } = registerSignals();
 log.info('Registered signal handlers.');
+
+// Example usage of fs
+const files = fs.readdirSync(getCurrentDirname(__dirname));
+log.info(`Files in current directory: ${files.join(', ')}`);
 ```
 
 ## API
+
+### fs
+
+Re-export of the Node.js built-in [`fs`](https://nodejs.org/api/fs.html) module. Use for file system operations.
 
 ### log
 
@@ -124,7 +137,7 @@ Sets up shutdown handlers for the process.
 Type definitions are included and exported for all main functions and options:
 
 ```ts
-import { log, path, getCurrentDirname, getCurrentFilename, registerHandlers, registerSignals, RegisterSignalsOptions } from '@purinton/common';
+import { fs, log, path, getCurrentDirname, getCurrentFilename, registerHandlers, registerSignals, RegisterSignalsOptions } from '@purinton/common';
 ```
 
 ## Support

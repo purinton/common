@@ -1,18 +1,20 @@
+const fs = require('fs');
 const log = require('@purinton/log').default || require('@purinton/log');
 const pathModule = require('@purinton/path');
+const path = pathModule.default || pathModule;
+const pathUrl = pathModule.pathUrl;
 const getCurrentDirname = pathModule.getCurrentDirname;
 const getCurrentFilename = pathModule.getCurrentFilename;
-const pathUrl = pathModule.pathUrl;
-const path = pathModule.default || pathModule;
 const { registerHandlers } = require('@purinton/errors');
 const { registerSignals } = require('@purinton/signals');
 
 module.exports = {
+  fs,
   log,
-  getCurrentDirname,
-  getCurrentFilename,
   path,
   pathUrl,
+  getCurrentDirname,
+  getCurrentFilename,
   registerHandlers,
   registerSignals,
 };
