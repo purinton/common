@@ -1,7 +1,7 @@
 {
     "name": "@purinton/common",
     "type": "module",
-    "version": "1.0.11",
+    "version": "1.0.12",
     "description": "An ESM/Jest/Node-friendly utility for resolving file and directory paths, logging, error handling, and signal handling in both CommonJS and ESM environments.",
     "main": "index.cjs",
     "module": "index.mjs",
@@ -56,9 +56,9 @@
         ]
     },
     "dependencies": {
-        "@purinton/errors": "^1.0.10",
-        "@purinton/log": "^1.0.8",
+        "@purinton/errors": "^1.0.11",
+        "@purinton/log": "^1.0.9",
         "@purinton/path": "^1.0.12",
-        "@purinton/signals": "^1.0.10"
+        "@purinton/signals": "^1.0.11"
     }
 }
